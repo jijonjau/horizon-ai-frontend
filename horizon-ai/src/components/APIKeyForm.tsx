@@ -69,6 +69,7 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
               background: 'linear-gradient(180deg, #7BCBD4 0%, #29C6B7 100%)',
             }}
             className="text-white px-4 py-1 rounded-full font-medium ml-2 dark:brightness-90 dark:hover:brightness-110"
+            onClick={handleSave}
           >
             Save
           </button>
@@ -93,7 +94,7 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
         </button>
 
         {showSolutions && (
-          <ul className="mt-2 text-sm text-[#1b2559] list-disc list-inside space-y-1 text-left p-3">
+          <ul className="mt-2 text-sm text-[#1b2559] dark:text-gray-200 list-disc list-inside space-y-1 text-left p-3">
             <li>
               Make sure youhave an OpenAI account and a valid API key to use
               ChatGPT. We do not sell API keys.
