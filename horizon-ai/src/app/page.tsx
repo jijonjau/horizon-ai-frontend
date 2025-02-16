@@ -12,21 +12,25 @@ export default function Chat() {
   const [isAPIKeyFormOpen, setIsAPIKeyFormOpen] = useState(true);
 
   return (
-    <div className="flex bg-white">
+    <div className="flex bg-gray-100 dark:bg-gray-900 dark:text-white rounded-lg shadow-md">
       <Sidebar />
       <div className="flex flex-col flex-1">
         <Header />
-        <div className="flex flex-col items-center flex-1 ">
-          <div className="flex items-center bg-white p-1 mb-3 mt-4">
+        <div
+          className="flex flex-col items-center flex-1 bg-no-repeat bg-center bg-[length:450px]"
+          style={{
+            backgroundImage: 'url(/Images/background.png)',
+          }}
+        >
+          <div className="flex items-center bg-white p-1 mb-3 mt-4 dark:bg-gray-800 dark:text-gray-200">
             <button
               onClick={() => setSelectedModel('gpt-3.5')}
-              className={`flex items-center gap-3 px-6 py-2 rounded-lg text-sm transition-all text-[#1b2559] font-semibold mr-1
-              ${selectedModel === 'gpt-3.5' ? 'scale-110 brightness-125 shadow-md' : 'opacity-100'}
-              hover:scale-110 hover:brightness-125 hover:shadow-md
-            `}
+              className={`flex items-center gap-3 px-6 py-2 rounded-lg text-sm transition-all text-[#1b2559] font-semibold mr-1 
+    ${selectedModel === 'gpt-3.5' ? 'scale-110 brightness-125 shadow-md' : 'opacity-100'} 
+    hover:scale-110 hover:brightness-125 hover:shadow-md dark:text-gray-200 dark:hover:text-white`}
               style={{ lineHeight: '1' }}
             >
-              <div className="w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-b from-[#FBFBFF] to-[#CACAFF] border border-[#CACAFF]">
+              <div className="w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-b from-[#FBFBFF] to-[#CACAFF] border border-[#CACAFF] dark:from-gray-700 dark:to-gray-900 dark:border-gray-600">
                 <img
                   src="/Icons/auto-awesome.png"
                   alt="gpt-3.5 icon"
@@ -38,13 +42,12 @@ export default function Chat() {
 
             <button
               onClick={() => setSelectedModel('gpt-4')}
-              className={`flex items-center gap-3 px-6 py-2 rounded-lg text-sm transition-all text-[#1b2559] font-semibold mr-1
-              ${selectedModel === 'gpt-4' ? 'scale-110 brightness-125 shadow-md' : 'opacity-100'}
-              hover:scale-110 hover:brightness-125 hover:shadow-md
-            `}
+              className={`flex items-center gap-3 px-6 py-2 rounded-lg text-sm transition-all text-[#1b2559] font-semibold mr-1 
+    ${selectedModel === 'gpt-4' ? 'scale-110 brightness-125 shadow-md' : 'opacity-100'} 
+    hover:scale-110 hover:brightness-125 hover:shadow-md dark:text-gray-200 dark:hover:text-white`}
               style={{ lineHeight: '1' }}
             >
-              <div className="w-8 h-8 flex items-center justify-center rounded-full border border-[#CACAFF] bg-gradient-to-b from-[#FBFBFF] to-[#CACAFF] transition-none">
+              <div className="w-8 h-8 flex items-center justify-center rounded-full border border-[#CACAFF] bg-gradient-to-b from-[#FBFBFF] to-[#CACAFF] dark:from-gray-700 dark:to-gray-900 dark:border-gray-600">
                 <img
                   src="/Icons/gpt-4.png"
                   alt="gpt-4 icon"

@@ -7,22 +7,37 @@ const ScreenModeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    if (darkMode) {
+    const savedMode = localStorage.getItem('darkMode') === 'true';
+    setDarkMode(savedMode);
+
+    if (savedMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, [darkMode]);
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem('darkMode', newMode.toString());
+
+    if (newMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
 
   return (
     <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="w-6 h-6 flex items-center justify-center rounded-full ml-4"
+      onClick={toggleDarkMode}
+      className="w-5 h-5 flex items-center justify-center rounded-full transition-all ml-4"
     >
       {darkMode ? (
-        <SunIcon className="w-6 h-6 text-yellow-400" />
+        <SunIcon className="w-5 h-5 text-yellow-400" />
       ) : (
-        <MoonIcon className="w-6 h-6 text-gray-700" />
+        <MoonIcon className="w-5 h-5 text-gray-700" />
       )}
     </button>
   );
