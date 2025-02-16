@@ -10,8 +10,6 @@ const Header = () => {
           placeholder="Search"
           className="border p-2 rounded-full pl-10"
         />
-
-        {/* <img src="/Icons/search.png" alt="Search Icon" className="absolute top-1/2 left-3 -translate-y-1/2 inline-block" /> */}
         <img
           src="/Icons/notifications.png"
           alt="notifications icon"
