@@ -5,9 +5,12 @@ import Sidebar from '../components/Sidebar';
 import Header from '../layout/Header';
 import APIKeyForm from '../components/APIKeyForm';
 import Footer from '@/layout/Footer';
+import ChatWindow from '@/components/ChatWindow';
 
 export default function Chat() {
   const [selectedModel, setSelectedModel] = useState('gpt-3.5');
+  const [isAPIKeyFormOpen, setIsAPIKeyFormOpen] = useState(true);
+
   return (
     <div className="flex bg-white">
       <Sidebar />
@@ -61,7 +64,11 @@ export default function Chat() {
               />
             </span>
           </p>
-          <APIKeyForm />
+
+          {isAPIKeyFormOpen && (
+            <APIKeyForm onClose={() => setIsAPIKeyFormOpen(false)} />
+          )}
+          <ChatWindow isDisabled={isAPIKeyFormOpen} />
         </div>
         <Footer />
       </div>
