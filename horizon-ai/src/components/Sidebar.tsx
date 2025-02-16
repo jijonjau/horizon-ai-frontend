@@ -10,7 +10,7 @@ const Sidebar = () => {
   const [isAdminPagesDropdownOpen, setAdminPagesDropdownOpen] = useState(true);
 
   return (
-    <aside className="w-64 bg-white p-4 shadow-lg">
+    <aside className="w-64 bg-white p-4 shadow-lg dark:bg-gray-800 dark:text-gray-200">
       <h2 className="text-xl font-semibold text-[#1b2559]">
         HORIZON <span className="font-normal">AI FREE</span>
       </h2>

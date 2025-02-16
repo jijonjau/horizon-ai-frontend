@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="w-full p-4 bg-white text-[#718096] text-center flex items-center justify-between">
+    <footer className="w-full p-4 bg-white text-[#718096] text-center flex items-center justify-between dark:bg-gray-900 dark:text-gray-400">
       <div>&copy; 2023 Horizon AI. All rights reserved.</div>
 
       <div className="flex items-center space-x-4">

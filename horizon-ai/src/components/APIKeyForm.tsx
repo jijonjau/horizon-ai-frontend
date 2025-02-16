@@ -7,8 +7,8 @@ const APIKeyForm = () => {
   const [apiKey, setApiKey] = useState('');
 
   return (
-    <div className="flex flex-col items-center justify-center bg-gray-50">
-      <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-96 text-center">
+    <div className="flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div className="bg-white dark:bg-gray-900 dark:border dark:border-white shadow-lg rounded-2xl p-6 w-full max-w-96 text-center">
         <h2 className="text-xl font-semibold text-[#1b2559]">
           Enter your OpenAI API Key
         </h2>
