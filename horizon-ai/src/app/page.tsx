@@ -9,11 +9,16 @@ import Footer from '@/layout/Footer';
 export default function Chat() {
   const [selectedModel, setSelectedModel] = useState('gpt-3.5');
   return (
-    <div className="flex bg-white dark:bg-gray-900 dark:text-white p-6 rounded-lg shadow-md">
+    <div className="flex bg-gray-100 dark:bg-gray-900 dark:text-white rounded-lg shadow-md">
       <Sidebar />
       <div className="flex flex-col flex-1">
         <Header />
-        <div className="flex flex-col items-center flex-1 ">
+        <div
+          className="flex flex-col items-center flex-1 bg-no-repeat bg-center bg-[length:450px]"
+          style={{
+            backgroundImage: 'url(/Images/background.png)',
+          }}
+        >
           <div className="flex items-center bg-white p-1 mb-3 mt-4 dark:bg-gray-800 dark:text-gray-200">
             <button
               onClick={() => setSelectedModel('gpt-3.5')}

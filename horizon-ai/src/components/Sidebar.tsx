@@ -11,7 +11,7 @@ const Sidebar = () => {
 
   return (
     <aside className="w-64 bg-white p-4 shadow-lg dark:bg-gray-800 dark:text-gray-200">
-      <h2 className="text-xl font-semibold text-[#1b2559]">
+      <h2 className="text-xl font-semibold text-[#1b2559] dark:text-white">
         HORIZON <span className="font-normal">AI FREE</span>
       </h2>
       <hr className="border-t border-gray-200 my-7 w-full" />
@@ -23,7 +23,9 @@ const Sidebar = () => {
               className="p-2 rounded-lg hover:bg-gray-200 flex items-center mb-4"
             >
               <img src="/Icons/auto-awesome.png" alt="awesome icon" />
-              <span className="text-[#1b2559] ml-4">Chat UI</span>
+              <span className="text-[#1b2559] dark:text-white ml-4">
+                Chat UI
+              </span>
             </Link>
           </li>
           <li>
