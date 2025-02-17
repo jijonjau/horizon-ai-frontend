@@ -25,11 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <ToastContainer autoClose={3000} />
+    <html lang="en" className="light">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ToastContainer autoClose={3000} />
         {children}
       </body>
     </html>

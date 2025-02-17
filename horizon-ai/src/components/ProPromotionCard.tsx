@@ -3,12 +3,12 @@ import React from 'react';
 const ProPromotionCard = () => {
   return (
     <div
-      className="relative flex flex-col items-center p-4 rounded-2xl text-white text-center shadow-lg mt-2"
+      className="relative flex flex-col items-center p-4 rounded-2xl text-white text-center shadow-lg mt-6"
       style={{
         background: 'linear-gradient(15.46deg, #4A25E1 26.3%, #7B5AFF 86.4%)',
       }}
     >
-      <div className="absolute -top-6 w-24 h-24 bg-opacity-20 rounded-full flex items-center justify-center">
+      <div className="absolute -top-7 w-22 h-22 bg-opacity-20 rounded-full flex items-center justify-center">
         <img src="/Icons/pro-card.png" alt="Pro Icon" className="w-24 h-24" />
       </div>
 
