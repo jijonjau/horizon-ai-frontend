@@ -92,6 +92,7 @@ const ChatWindow: React.FC<{ isDisabled: boolean }> = ({ isDisabled }) => {
             placeholder="Send message"
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
             disabled={isDisabled}
           />
           <button
@@ -110,10 +111,10 @@ const ChatWindow: React.FC<{ isDisabled: boolean }> = ({ isDisabled }) => {
         </div>
       </div>
 
-      <p className="text-[#718096] text-xs mt-2">
+      <p className="text-[#718096] text-xs mt-2 dark:text-gray-300">
         Free Research Preview. ChatGPT may produce inaccurate information about
-        people, places, or facts.{' '}
-        <span className="text-[#1B2559] font-semibold underline">
+        people, places, or facts.
+        <span className="text-[#1B2559] font-semibold underline dark:text-white">
           ChatGPT May 12 Version
         </span>
       </p>

@@ -20,7 +20,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="/chat"
-              className="p-2 rounded-lg hover:bg-gray-200 flex items-center mb-4"
+              className="p-2 rounded-lg hover:bg-gray-400 flex items-center mb-4"
             >
               <img src="/Icons/auto-awesome.png" alt="awesome icon" />
               <span className="text-[#1b2559] dark:text-white ml-4">
@@ -31,7 +31,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="/projects"
-              className="p-2 rounded-lg hover:bg-gray-200 flex items-center"
+              className="p-2 rounded-lg hover:bg-gray-300 flex items-center"
             >
               <img src="/Icons/projects.png" alt="project icon" />
               <span className="ml-4 flex-1 text-[#718096]">My Projects</span>
@@ -44,7 +44,7 @@ const Sidebar = () => {
 
             <Link
               href="/templates"
-              className="p-2 rounded-lg hover:bg-gray-200 flex items-center"
+              className="p-2 rounded-lg hover:bg-gray-300 flex items-center"
             >
               <img src="/Icons/template.png" alt="template icon" />
               <span className="ml-4 flex-1 text-[#718096]">Templates</span>
@@ -56,7 +56,7 @@ const Sidebar = () => {
             </Link>
 
             <div
-              className="p-2 rounded-lg hover:bg-gray-200 flex items-center cursor-pointer"
+              className="p-2 rounded-lg hover:bg-gray-300 flex items-center cursor-pointer"
               onClick={() =>
                 setOtherPagesDropdownOpen(!isOtherPagesDropdownOpen)
               }
@@ -74,19 +74,19 @@ const Sidebar = () => {
               <div className="ml-8 flex flex-col text-[#718096]">
                 <Link
                   href="/prompt"
-                  className="p-2 rounded-lg hover:bg-gray-100 flex items-center"
+                  className="p-2 rounded-lg hover:bg-gray-300 flex items-center"
                 >
                   <span>Prompt Page</span>
                 </Link>
                 <Link
                   href="/register"
-                  className="p-2 rounded-lg hover:bg-gray-100 flex items-center"
+                  className="p-2 rounded-lg hover:bg-gray-300 flex items-center"
                 >
                   <span>Register</span>
                 </Link>
                 <Link
                   href="/login"
-                  className="p-2 rounded-lg hover:bg-gray-100 flex items-center"
+                  className="p-2 rounded-lg hover:bg-gray-300 flex items-center"
                 >
                   <span>Sign in</span>
                 </Link>
@@ -94,7 +94,7 @@ const Sidebar = () => {
             )}
 
             <div
-              className="p-2 rounded-lg hover:bg-gray-200 flex items-center cursor-pointer"
+              className="p-2 rounded-lg hover:bg-gray-300 flex items-center cursor-pointer"
               onClick={() =>
                 setAdminPagesDropdownOpen(!isAdminPagesDropdownOpen)
               }
@@ -112,25 +112,25 @@ const Sidebar = () => {
               <div className="ml-8 flex flex-col text-[#718096]">
                 <Link
                   href="/allTemplates"
-                  className="p-2 rounded-lg hover:bg-gray-100 flex items-center"
+                  className="p-2 rounded-lg hover:bg-gray-300 flex items-center"
                 >
                   <span>All Templates</span>
                 </Link>
                 <Link
                   href="/newTemplate"
-                  className="p-2 rounded-lg hover:bg-gray-100 flex items-center"
+                  className="p-2 rounded-lg hover:bg-gray-300 flex items-center"
                 >
                   <span>New Template</span>
                 </Link>
                 <Link
                   href="/editTemplate"
-                  className="p-2 rounded-lg hover:bg-gray-100 flex items-center"
+                  className="p-2 rounded-lg hover:bg-gray-300 flex items-center"
                 >
                   <span>Edit Template</span>
                 </Link>
                 <Link
                   href="/usersOverview"
-                  className="p-2 rounded-lg hover:bg-gray-100 flex items-center"
+                  className="p-2 rounded-lg hover:bg-gray-300 flex items-center"
                 >
                   <span>Users Overview</span>
                 </Link>
