@@ -5,7 +5,25 @@ import Link from 'next/link';
 import ProPromotionCard from './ProPromotionCard';
 import UserProfile from './UserProfile';
 
-const Sidebar = () => {
+const Sidebar = ({
+  isLoggedIn,
+  setIsLoggedIn,
+  isLoginModalOpen,
+  setIsLoginModalOpen,
+  userName,
+  userEmail,
+  isOpen,
+  setIsOpen,
+}: {
+  isLoggedIn: boolean;
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+  isLoginModalOpen: boolean;
+  setIsLoginModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  userName: string;
+  userEmail: string;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const [isOtherPagesDropdownOpen, setOtherPagesDropdownOpen] = useState(true);
   const [isAdminPagesDropdownOpen, setAdminPagesDropdownOpen] = useState(true);
   const [isProUser, setIsProUser] = useState(true);
@@ -201,7 +219,14 @@ const Sidebar = () => {
 
       <ProPromotionCard />
 
-      <UserProfile />
+      <UserProfile
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+        isLoginModalOpen={isLoginModalOpen}
+        setIsLoginModalOpen={setIsLoginModalOpen}
+        userName={userName}
+        userEmail={userEmail}
+      />
     </aside>
   );
 };

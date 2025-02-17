@@ -10,14 +10,37 @@ import ChatWindow from '@/components/ChatWindow';
 export default function Chat() {
   const [selectedModel, setSelectedModel] = useState('gpt-3.5');
   const [isAPIKeyFormOpen, setIsAPIKeyFormOpen] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [userName, setUserName] = useState('Adela');
+  const [userEmail, setUserEmail] = useState('adelaparkson@gmail.com');
 
   return (
     <div className="flex bg-gray-100 dark:bg-gray-900 dark:text-white rounded-lg shadow-md h-fit">
-      <Sidebar />
+      <Sidebar
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+        isLoginModalOpen={isLoginModalOpen}
+        setIsLoginModalOpen={setIsLoginModalOpen}
+        userName={userName}
+        userEmail={userEmail}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
       <div className="flex flex-col flex-1">
-        <Header />
+        <Header
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          isLoginModalOpen={isLoginModalOpen}
+          setIsLoginModalOpen={setIsLoginModalOpen}
+          userName={userName}
+          userEmail={userEmail}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
         <div
-          className="flex flex-col items-center flex-1 bg-no-repeat bg-center bg-[length:450px]"
+          className="flex flex-col items-center flex-1 bg-no-repeat bg-center bg-[length:500px]"
           style={{
             backgroundImage: 'url(/Images/background.png)',
           }}
@@ -58,7 +81,7 @@ export default function Chat() {
             </button>
           </div>
 
-          <p className="flex items-center text-sm text-[#718096] mb-10">
+          <p className="flex items-center text-sm text-[#718096] dark:text-gray-400 mb-10">
             No plugins enabled{' '}
             <span className="ml-2">
               <img

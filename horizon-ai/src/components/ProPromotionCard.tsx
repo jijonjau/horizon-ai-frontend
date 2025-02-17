@@ -18,9 +18,15 @@ const ProPromotionCard = () => {
         AI Template PRO!
       </p>
 
-      <button className="mt-3 bg-[#FFFFFF24] text-white text-sm font-medium py-2 px-4 rounded-full hover:bg-opacity-90 transition">
-        Get started with PRO
-      </button>
+      <a
+        href="https://horizon-ui.com/ai-template"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button className="mt-3 bg-[#FFFFFF24] text-white text-sm font-medium py-2 px-4 rounded-full hover:bg-opacity-90 transition">
+          Get started with PRO
+        </button>
+      </a>
     </div>
   );
 };

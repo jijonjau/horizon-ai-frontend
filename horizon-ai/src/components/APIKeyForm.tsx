@@ -51,7 +51,7 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
           Enter your OpenAI API Key
         </h2>
 
-        <p className="text-sm text-gray-500 mt-2">
+        <p className="text-sm text-gray-500 mt-2 dark:text-gray-400">
           You need an OpenAI API Key to use Horizon Chat UI. Your API Key is
           stored locally on your browser and never sent anywhere else.
         </p>
@@ -77,7 +77,7 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
         </div>
 
         <a
-          href="https://platform.openai.com/docs/overview"
+          href="https://platform.openai.com/api-keys"
           className="text-sm text-[#603CFF] underline font-medium block mt-3"
           target="_blank"
           rel="noopener noreferrer"
@@ -85,7 +85,10 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
           Get your API key from OpenAI Dashboard
         </a>
 
-        <button className="font-semibold text-[#1b2559] dark:text-gray-200 mt-4 flex items-center justify-center w-full">
+        <button
+          className="font-semibold text-[#1b2559] dark:text-gray-200 mt-4 flex items-center justify-center w-full transition duration-300"
+          onClick={() => setShowSolutions(!showSolutions)}
+        >
           Your API Key is not working?
           {showSolutions ? (
             <FaChevronUp size={14} />
@@ -97,8 +100,18 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
         {showSolutions && (
           <ul className="mt-2 text-sm text-[#1b2559] dark:text-gray-200 list-disc list-inside space-y-1 text-left p-3">
             <li>
-              Make sure youhave an OpenAI account and a valid API key to use
-              ChatGPT. We do not sell API keys.
+              Make sure you have an{' '}
+              <a
+                href={
+                  'https://platform.openai.com/settings/organization/general'
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#603CFF] underline"
+              >
+                OpenAI account
+              </a>{' '}
+              and a valid API key to use ChatGPT. We do not sell API keys.
             </li>
             <li>
               Make sure you have your billing info added in{' '}
