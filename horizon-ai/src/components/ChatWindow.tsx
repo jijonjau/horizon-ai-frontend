@@ -114,9 +114,14 @@ const ChatWindow: React.FC<{ isDisabled: boolean }> = ({ isDisabled }) => {
       <p className="text-[#718096] text-xs mt-2 dark:text-gray-300 mb-4">
         Free Research Preview. ChatGPT may produce inaccurate information about
         people, places, or facts.
-        <span className="text-[#1B2559] font-semibold underline dark:text-white">
+        <a
+          href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#1B2559] font-semibold underline dark:text-white"
+        >
           ChatGPT May 12 Version
-        </span>
+        </a>
       </p>
     </div>
   );
