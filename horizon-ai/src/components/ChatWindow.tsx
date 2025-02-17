@@ -54,7 +54,7 @@ const ChatWindow: React.FC<{ isDisabled: boolean }> = ({ isDisabled }) => {
   };
 
   return (
-    <div className="flex flex-col h-screen items-center w-full">
+    <div className="flex flex-col h-full items-center w-full">
       <div className="w-full max-w-2xl flex-1 overflow-y-auto space-y-4 p-4">
         {messages.map((msg, index) => (
           <ChatMessage
@@ -81,7 +81,7 @@ const ChatWindow: React.FC<{ isDisabled: boolean }> = ({ isDisabled }) => {
         )}
       </div>
 
-      <div className="w-full max-w-2xl sticky bottom-0 p-4 dark:border-gray-700">
+      <div className="w-full max-w-2xl p-4 dark:border-gray-700 bottom-2">
         <div className="flex w-full">
           <input
             type="text"
@@ -111,7 +111,7 @@ const ChatWindow: React.FC<{ isDisabled: boolean }> = ({ isDisabled }) => {
         </div>
       </div>
 
-      <p className="text-[#718096] text-xs mt-2 dark:text-gray-300">
+      <p className="text-[#718096] text-xs mt-2 dark:text-gray-300 mb-4">
         Free Research Preview. ChatGPT may produce inaccurate information about
         people, places, or facts.
         <span className="text-[#1B2559] font-semibold underline dark:text-white">

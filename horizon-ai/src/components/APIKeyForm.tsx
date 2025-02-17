@@ -63,6 +63,7 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
             placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             value={apiKey}
             onChange={(e) => setApiKey(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSave()}
           />
           <button
             style={{

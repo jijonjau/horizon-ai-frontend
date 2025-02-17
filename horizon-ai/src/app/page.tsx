@@ -12,7 +12,7 @@ export default function Chat() {
   const [isAPIKeyFormOpen, setIsAPIKeyFormOpen] = useState(true);
 
   return (
-    <div className="flex bg-gray-100 dark:bg-gray-900 dark:text-white rounded-lg shadow-md">
+    <div className="flex bg-gray-100 dark:bg-gray-900 dark:text-white rounded-lg shadow-md h-fit">
       <Sidebar />
       <div className="flex flex-col flex-1">
         <Header />

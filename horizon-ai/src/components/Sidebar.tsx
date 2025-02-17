@@ -8,9 +8,10 @@ import UserProfile from './UserProfile';
 const Sidebar = () => {
   const [isOtherPagesDropdownOpen, setOtherPagesDropdownOpen] = useState(true);
   const [isAdminPagesDropdownOpen, setAdminPagesDropdownOpen] = useState(true);
+  const [isProUser, setIsProUser] = useState(true);
 
   return (
-    <aside className="w-64 bg-white p-4 shadow-lg dark:bg-gray-800 dark:text-gray-200">
+    <aside className="w-64 bg-white p-4 shadow-lg dark:bg-gray-800 dark:text-gray-200 h-fit">
       <h2 className="text-xl font-semibold text-[#1b2559] dark:text-white">
         HORIZON <span className="font-normal">AI FREE</span>
       </h2>
@@ -43,34 +44,54 @@ const Sidebar = () => {
             </Link>
 
             <Link
-              href="/templates"
-              className="p-2 rounded-lg hover:bg-gray-300 flex items-center"
+              href={isProUser ? '#' : '/templates'}
+              onClick={(e) => {
+                if (isProUser) e.preventDefault();
+              }}
+              className={`p-2 rounded-lg flex items-center transition ${
+                isProUser
+                  ? 'cursor-not-allowed'
+                  : 'hover:bg-gray-100 dark:hover:bg-gray-800'
+              }`}
             >
-              <img src="/Icons/template.png" alt="template icon" />
-              <span className="ml-4 flex-1 text-[#718096]">Templates</span>
               <img
-                src="/Icons/PRO-Badge.png"
-                alt="pro badge icon"
-                className="ml-4"
+                src="/Icons/template.png"
+                alt="template icon"
+                className="w-5 h-5"
               />
+              <span className="ml-4 flex-1 text-[#718096]">Templates</span>
+              {isProUser && (
+                <img
+                  src="/Icons/PRO-Badge.png"
+                  alt="pro badge icon"
+                  className="ml-4"
+                />
+              )}
             </Link>
 
             <div
-              className="p-2 rounded-lg hover:bg-gray-300 flex items-center cursor-pointer"
-              onClick={() =>
-                setOtherPagesDropdownOpen(!isOtherPagesDropdownOpen)
-              }
+              className={`p-2 rounded-lg flex items-center transition ${
+                isProUser
+                  ? 'cursor-not-allowed'
+                  : 'hover:bg-gray-300 cursor-pointer'
+              }`}
+              onClick={(e) => {
+                if (isProUser) e.preventDefault();
+                else setOtherPagesDropdownOpen(!isOtherPagesDropdownOpen);
+              }}
             >
               <img src="/Icons/other-pages.png" alt="other pages icon" />
               <span className="ml-4 flex-1 text-[#718096]">Other Pages</span>
-              <img
-                src="/Icons/PRO-Badge.png"
-                alt="pro badge icon"
-                className="ml-4"
-              />
+              {isProUser && (
+                <img
+                  src="/Icons/PRO-Badge.png"
+                  alt="pro badge icon"
+                  className="ml-4"
+                />
+              )}
             </div>
 
-            {isOtherPagesDropdownOpen && (
+            {isOtherPagesDropdownOpen && !isProUser && (
               <div className="ml-8 flex flex-col text-[#718096]">
                 <Link
                   href="/prompt"
@@ -93,22 +114,43 @@ const Sidebar = () => {
               </div>
             )}
 
+            {isOtherPagesDropdownOpen && isProUser && (
+              <div className="ml-8 flex flex-col text-[#718096]">
+                <div className="p-2 rounded-lg cursor-not-allowed flex items-center">
+                  <span>Prompt Page</span>
+                </div>
+                <div className="p-2 rounded-lg cursor-not-allowed flex items-center">
+                  <span>Register</span>
+                </div>
+                <div className="p-2 rounded-lg cursor-not-allowed flex items-center">
+                  <span>Sign in</span>
+                </div>
+              </div>
+            )}
+
             <div
-              className="p-2 rounded-lg hover:bg-gray-300 flex items-center cursor-pointer"
-              onClick={() =>
-                setAdminPagesDropdownOpen(!isAdminPagesDropdownOpen)
-              }
+              className={`p-2 rounded-lg flex items-center transition ${
+                isProUser
+                  ? 'cursor-not-allowed'
+                  : 'hover:bg-gray-300 cursor-pointer'
+              }`}
+              onClick={(e) => {
+                if (isProUser) e.preventDefault();
+                else setAdminPagesDropdownOpen(!isAdminPagesDropdownOpen);
+              }}
             >
               <img src="/Icons/admin-pages.png" alt="admin pages icon" />
               <span className="ml-4 flex-1 text-[#718096]">Admin Pages</span>
-              <img
-                src="/Icons/PRO-Badge.png"
-                alt="pro badge icon"
-                className="ml-4"
-              />
+              {isProUser && (
+                <img
+                  src="/Icons/PRO-Badge.png"
+                  alt="pro badge icon"
+                  className="ml-4"
+                />
+              )}
             </div>
 
-            {isAdminPagesDropdownOpen && (
+            {isAdminPagesDropdownOpen && !isProUser && (
               <div className="ml-8 flex flex-col text-[#718096]">
                 <Link
                   href="/allTemplates"
@@ -134,6 +176,23 @@ const Sidebar = () => {
                 >
                   <span>Users Overview</span>
                 </Link>
+              </div>
+            )}
+
+            {isAdminPagesDropdownOpen && isProUser && (
+              <div className="ml-8 flex flex-col text-[#718096]">
+                <div className="p-2 rounded-lg cursor-not-allowed flex items-center">
+                  <span>All Templates</span>
+                </div>
+                <div className="p-2 rounded-lg cursor-not-allowed flex items-center">
+                  <span>New Template</span>
+                </div>
+                <div className="p-2 rounded-lg cursor-not-allowed flex items-center">
+                  <span>Edit Template</span>
+                </div>
+                <div className="p-2 rounded-lg cursor-not-allowed flex items-center">
+                  <span>Users Overview</span>
+                </div>
               </div>
             )}
           </li>
