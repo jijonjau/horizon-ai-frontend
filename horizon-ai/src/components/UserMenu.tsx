@@ -1,10 +1,26 @@
-import { useEffect, useRef, useState } from 'react';
+'use client';
 
-const UserMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [userName, setUserName] = useState('Adela');
+import { useEffect, useRef } from 'react';
+
+const UserMenu: React.FC<{
+  isLoggedIn: boolean;
+  setIsLoggedIn: (isLoggedIn: boolean) => void;
+  userName: string;
+  userEmail: string;
+  isLoginModalOpen: boolean;
+  setIsLoginModalOpen: (isLoggedIn: boolean) => void;
+  isOpen: boolean;
+  setIsOpen: (isLoggedIn: boolean) => void;
+}> = ({
+  isLoggedIn,
+  setIsLoggedIn,
+  userName,
+  userEmail,
+  isLoginModalOpen,
+  setIsLoginModalOpen,
+  isOpen,
+  setIsOpen,
+}) => {
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -28,13 +44,13 @@ const UserMenu = () => {
         <img
           src="/Icons/user-avatar.png"
           alt="User Avatar"
-          className="w-8 h-8 ml-4 cursor-pointer rounded-full border-2 border-gray-300 dark:border-gray-600 hover:border-[#4A25E1] transition"
-          onClick={() => setIsOpen(!isOpen)}
+          className="w-8 h-8 ml-4 cursor-pointer rounded-full"
+          onClick={() => setIsOpen(true)}
         />
       ) : (
         <button
           onClick={() => setIsLoginModalOpen(true)}
-          className="ml-4 px-4 py-2 bg-[#4A25E1] text-white rounded-lg hover:bg-[#6B4FFF] transition dark:bg-[#6B4FFF] dark:hover:bg-[#4A25E1]"
+          className="ml-4 px-4 py-2 bg-[#4A25E1] text-white rounded-lg"
         >
           Login
         </button>
@@ -68,6 +84,7 @@ const UserMenu = () => {
               onClick={() => {
                 setIsLoggedIn(false);
                 setIsOpen(false);
+                window.location.reload();
               }}
               className="block w-full text-left p-2 text-red-600 dark:text-red-400 font-medium hover:bg-red-100 dark:hover:bg-red-700 rounded-lg transition"
             >
@@ -81,11 +98,26 @@ const UserMenu = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div
             ref={modalRef}
-            className="bg-white dark:bg-[#1a1c23] p-6 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700 w-80"
+            className="bg-white dark:bg-[#1a1c23] p-6 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700 w-[450px]"
           >
             <h2 className="text-xl font-semibold text-[#1b2559] dark:text-gray-200 mb-4 text-center">
-              Login Options
+              Sign in to horizonAI.com with Google
             </h2>
+            <div className="flex items-center mb-4">
+              <img
+                src="/Icons/user-avatar.png"
+                alt="Profile"
+                className="w-10 h-10 rounded-full mr-3"
+              />
+              <div>
+                <p className="text-lg text-[#1b2559] dark:text-gray-200 font-medium">
+                  {userName}
+                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {userEmail}
+                </p>
+              </div>
+            </div>
             <button
               onClick={() => {
                 setIsLoggedIn(true);
@@ -93,17 +125,26 @@ const UserMenu = () => {
               }}
               className="w-full p-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition"
             >
-              Login with Google
+              Continue as {userName}
             </button>
-            <button
-              onClick={() => {
-                setIsLoggedIn(true);
-                setIsLoginModalOpen(false);
-              }}
-              className="w-full mt-2 p-3 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-medium rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-            >
-              Continue as {userName} via Google
-            </button>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-4 text-center">
+              To continue, google.com will share your name, email address, and
+              profile picture with this site. See this site's{' '}
+              <a
+                href="https://horizon-ui.notion.site/Privacy-Policy-8addde50aa8e408ca5c5f5811c38f971"
+                className="text-blue-500 hover:underline"
+              >
+                privacy policy
+              </a>{' '}
+              and{' '}
+              <a
+                href="https://horizon-ui.notion.site/Terms-Conditions-6e79229d25ed48f48a481962bc6de3ee"
+                className="text-blue-500 hover:underline"
+              >
+                terms of service
+              </a>
+              .
+            </p>
           </div>
         </div>
       )}
