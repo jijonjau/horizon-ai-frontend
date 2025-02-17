@@ -6,6 +6,7 @@ import Header from '../layout/Header';
 import APIKeyForm from '../components/APIKeyForm';
 import Footer from '@/layout/Footer';
 import ChatWindow from '@/components/ChatWindow';
+import { HiChevronLeft } from 'react-icons/hi';
 
 export default function Chat() {
   const [selectedModel, setSelectedModel] = useState('gpt-3.5');
@@ -17,17 +18,19 @@ export default function Chat() {
   const [userEmail, setUserEmail] = useState('adelaparkson@gmail.com');
 
   return (
-    <div className="flex bg-gray-100 dark:bg-gray-900 dark:text-white rounded-lg shadow-md h-fit">
-      <Sidebar
-        isLoggedIn={isLoggedIn}
-        setIsLoggedIn={setIsLoggedIn}
-        isLoginModalOpen={isLoginModalOpen}
-        setIsLoginModalOpen={setIsLoginModalOpen}
-        userName={userName}
-        userEmail={userEmail}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-      />
+    <div className="flex flex-col md:flex-row bg-gray-100 dark:bg-gray-900 dark:text-white rounded-lg shadow-md h-fit">
+      <div className="hidden md:block md:w-64">
+        <Sidebar
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          isLoginModalOpen={isLoginModalOpen}
+          setIsLoginModalOpen={setIsLoginModalOpen}
+          userName={userName}
+          userEmail={userEmail}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+      </div>
       <div className="flex flex-col flex-1">
         <Header
           isLoggedIn={isLoggedIn}
@@ -45,7 +48,7 @@ export default function Chat() {
             backgroundImage: 'url(/Images/background.png)',
           }}
         >
-          <div className="flex items-center bg-white p-1 mb-3 mt-4 dark:bg-gray-800 dark:text-gray-200">
+          <div className="flex flex-wrap justify-center items-center bg-white p-1 mb-3 mt-4 dark:bg-gray-800 dark:text-gray-200">
             <button
               onClick={() => setSelectedModel('gpt-3.5')}
               className={`flex items-center gap-3 px-6 py-2 rounded-lg text-sm transition-all text-[#1b2559] font-semibold mr-1 

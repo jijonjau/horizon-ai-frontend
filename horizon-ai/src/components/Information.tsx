@@ -32,13 +32,13 @@ const InformationMenu = () => {
       {isOpen && (
         <div
           ref={modalRef}
-          className="absolute right-0 mt-2 w-60 bg-white dark:bg-[#1a1c23] shadow-lg rounded-xl p-2 border border-gray-300 dark:border-gray-700"
+          className="absolute right-0 mt-2 w-60 sm:w-72 md:w-80 lg:w-96 bg-white dark:bg-[#1a1c23] shadow-lg rounded-xl p-2 border border-gray-300 dark:border-gray-700"
         >
           <a
             href="https://horizon-ui.com/ai-template/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-3 text-[#1b2559] dark:text-gray-200 font-medium rounded-lg border-[2px] border-transparent hover:border-[#4A25E1] hover:bg-gradient-to-r from-[#4A25E1] to-[#7B5AFF] hover:text-white dark:hover:text-white transition duration-300"
+            className="block p-3 text-[#1b2559] dark:text-gray-200 text-sm sm:text-base font-medium rounded-lg border-[2px] border-transparent hover:border-[#4A25E1] hover:bg-gradient-to-r from-[#4A25E1] to-[#7B5AFF] hover:text-white dark:hover:text-white transition duration-300"
           >
             Buy Horizon AI Template
           </a>
@@ -49,7 +49,7 @@ const InformationMenu = () => {
             href="https://horizon-ui.com/docs-ai-template/docs/introduction"
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-3 text-[#1b2559] dark:text-gray-200 font-medium rounded-lg border-[2px] border-transparent hover:border-[#4A25E1] hover:bg-gradient-to-r from-[#4A25E1] to-[#7B5AFF] hover:text-white dark:hover:text-white transition duration-300"
+            className="block p-3 text-[#1b2559] dark:text-gray-200 text-sm sm:text-base font-medium rounded-lg border-[2px] border-transparent hover:border-[#4A25E1] hover:bg-gradient-to-r from-[#4A25E1] to-[#7B5AFF] hover:text-white dark:hover:text-white transition duration-300"
           >
             See Documentation
           </a>
@@ -60,7 +60,7 @@ const InformationMenu = () => {
             href="https://github.com/horizon-ui/chatgpt-ai-template"
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-3 text-[#1b2559] dark:text-gray-200 font-medium rounded-lg border-[2px] border-transparent hover:border-[#4A25E1] hover:bg-gradient-to-r from-[#4A25E1] to-[#7B5AFF] hover:text-white dark:hover:text-white transition duration-300"
+            className="block p-3 text-[#1b2559] dark:text-gray-200 text-sm sm:text-base font-medium rounded-lg border-[2px] border-transparent hover:border-[#4A25E1] hover:bg-gradient-to-r from-[#4A25E1] to-[#7B5AFF] hover:text-white dark:hover:text-white transition duration-300"
           >
             Try Free Version
           </a>

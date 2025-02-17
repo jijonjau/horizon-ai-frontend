@@ -44,13 +44,13 @@ const UserMenu: React.FC<{
         <img
           src="/Icons/user-avatar.png"
           alt="User Avatar"
-          className="w-8 h-8 ml-4 cursor-pointer rounded-full"
+          className="w-6 h-6 ml-4 cursor-pointer rounded-full"
           onClick={() => setIsOpen(true)}
         />
       ) : (
         <button
           onClick={() => setIsLoginModalOpen(true)}
-          className="ml-4 px-4 py-2 bg-[#4A25E1] text-white rounded-lg"
+          className="ml-4 px-2 py-1 bg-[#4A25E1] text-white rounded-lg text-sm"
         >
           Login
         </button>
@@ -59,24 +59,24 @@ const UserMenu: React.FC<{
       {isOpen && isLoggedIn && (
         <div
           ref={modalRef}
-          className="absolute top-12 right-0 w-56 bg-white dark:bg-[#1a1c23] shadow-lg rounded-xl p-3 border border-gray-300 dark:border-gray-700 z-50"
+          className="absolute top-12 right-0 w-44 bg-white dark:bg-[#1a1c23] shadow-lg rounded-xl p-2 border border-gray-300 dark:border-gray-700 z-50"
         >
-          <div className="pb-2 border-b border-gray-200 dark:border-gray-600">
-            <h3 className="font-semibold text-[#1b2559] dark:text-gray-200">
+          <div className="pb-1 border-b border-gray-200 dark:border-gray-600">
+            <h3 className="font-semibold text-[#1b2559] dark:text-gray-200 text-sm">
               Hello, {userName} 👋
             </h3>
           </div>
 
-          <div className="mt-2 space-y-2">
+          <div className="mt-2 space-y-1">
             <a
               href="/profile-settings"
-              className="block p-2 text-[#1b2559] dark:text-gray-200 font-medium hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition"
+              className="block p-1 text-[#1b2559] dark:text-gray-200 font-medium hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition"
             >
               Profile Settings
             </a>
             <a
               href="/newsletter-settings"
-              className="block p-2 text-[#1b2559] dark:text-gray-200 font-medium hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition"
+              className="block p-1 text-[#1b2559] dark:text-gray-200 font-medium hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition"
             >
               Newsletter Settings
             </a>
@@ -86,7 +86,7 @@ const UserMenu: React.FC<{
                 setIsOpen(false);
                 window.location.reload();
               }}
-              className="block w-full text-left p-2 text-red-600 dark:text-red-400 font-medium hover:bg-red-100 dark:hover:bg-red-700 rounded-lg transition"
+              className="block w-full text-left p-1 text-red-600 dark:text-red-400 font-medium hover:bg-red-100 dark:hover:bg-red-700 rounded-lg transition text-sm"
             >
               Log out
             </button>
@@ -98,30 +98,30 @@ const UserMenu: React.FC<{
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div
             ref={modalRef}
-            className="bg-white dark:bg-[#1a1c23] p-6 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700 w-[450px]"
+            className="bg-white dark:bg-[#1a1c23] p-4 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700 w-full max-w-sm sm:w-[300px]"
           >
-            <div className="flex items-start mb-2 border-gray-300 dark:border-gray-700">
+            <div className="flex flex-row sm:flex-row items-start mb-1 border-gray-300 dark:border-gray-700">
               <img
                 src="/Icons/google.png"
                 alt="Google Icon"
-                className="w-6 h-6 mr-3"
+                className="w-4 h-4 mr-2"
               />
-              <h2 className="text-[#1b2559] dark:text-gray-200">
+              <h2 className="text-sm text-[#1b2559] dark:text-gray-200">
                 Sign in to horizonAI.com with Google
               </h2>
             </div>
-            <div className="border-t border-b border-gray-300 dark:border-gray-700 my-2"></div>
-            <div className="flex items-center mb-4">
+            <div className="border-t border-b border-gray-300 dark:border-gray-700 my-1"></div>
+            <div className="flex items-center mb-2">
               <img
                 src="/Icons/user-avatar.png"
                 alt="Profile"
-                className="w-10 h-10 rounded-full mr-3"
+                className="w-8 h-8 rounded-full mr-2"
               />
               <div>
-                <p className="text-lg text-[#1b2559] dark:text-gray-200 font-medium">
+                <p className="text-sm text-[#1b2559] dark:text-gray-200 font-medium">
                   {userName}
                 </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-xs text-gray-600 dark:text-gray-400">
                   {userEmail}
                 </p>
               </div>
@@ -131,11 +131,11 @@ const UserMenu: React.FC<{
                 setIsLoggedIn(true);
                 setIsLoginModalOpen(false);
               }}
-              className="w-full p-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition"
+              className="w-full p-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition text-sm"
             >
               Continue as {userName}
             </button>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-4 text-center">
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center">
               To continue, google.com will share your name, email address, and
               profile picture with this site. See this site's{' '}
               <a

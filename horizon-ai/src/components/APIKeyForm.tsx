@@ -45,18 +45,18 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900">
-      <div className="bg-white dark:bg-gray-900 dark:border dark:border-white shadow-lg rounded-2xl p-6 w-full max-w-96 text-center">
-        <h2 className="text-xl font-semibold text-[#1b2559] dark:text-gray-200">
+    <div className="flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 p-4 sm:p-6 md:p-8 lg:p-10">
+      <div className="bg-white dark:bg-gray-900 dark:border dark:border-white shadow-lg rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 w-full max-w-md lg:max-w-lg text-center">
+        <h2 className="text-lg sm:text-xl font-semibold text-[#1b2559] dark:text-gray-200">
           Enter your OpenAI API Key
         </h2>
 
-        <p className="text-sm text-gray-500 mt-2 dark:text-gray-400">
+        <p className="text-xs sm:text-sm text-gray-500 mt-2 dark:text-gray-400">
           You need an OpenAI API Key to use Horizon Chat UI. Your API Key is
           stored locally on your browser and never sent anywhere else.
         </p>
 
-        <div className="flex items-center p-2 rounded-lg mt-4 justify-between ">
+        <div className="flex items-center p-2 rounded-lg mt-4 justify-between">
           <input
             type="password"
             className="flex-1 border border-gray-200 dark:border-gray-700 rounded-full outline-none text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 p-2"
@@ -78,7 +78,7 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
 
         <a
           href="https://platform.openai.com/api-keys"
-          className="text-sm text-[#603CFF] underline font-medium block mt-3"
+          className="text-xs sm:text-sm text-[#603CFF] underline font-medium block mt-3"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -98,7 +98,7 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
         </button>
 
         {showSolutions && (
-          <ul className="mt-2 text-sm text-[#1b2559] dark:text-gray-200 list-disc list-inside space-y-1 text-left p-3">
+          <ul className="mt-2 text-xs sm:text-sm text-[#1b2559] dark:text-gray-200 list-disc list-inside space-y-1 text-left p-3">
             <li>
               Make sure you have an{' '}
               <a
