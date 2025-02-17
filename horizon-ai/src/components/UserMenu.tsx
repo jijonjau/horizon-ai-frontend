@@ -100,9 +100,17 @@ const UserMenu: React.FC<{
             ref={modalRef}
             className="bg-white dark:bg-[#1a1c23] p-6 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700 w-[450px]"
           >
-            <h2 className="text-xl font-semibold text-[#1b2559] dark:text-gray-200 mb-4 text-center">
-              Sign in to horizonAI.com with Google
-            </h2>
+            <div className="flex items-start mb-2 border-gray-300 dark:border-gray-700">
+              <img
+                src="/Icons/google.png"
+                alt="Google Icon"
+                className="w-6 h-6 mr-3"
+              />
+              <h2 className="text-[#1b2559] dark:text-gray-200">
+                Sign in to horizonAI.com with Google
+              </h2>
+            </div>
+            <div className="border-t border-b border-gray-300 dark:border-gray-700 my-2"></div>
             <div className="flex items-center mb-4">
               <img
                 src="/Icons/user-avatar.png"
