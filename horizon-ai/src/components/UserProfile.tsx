@@ -21,7 +21,7 @@ const UserProfile: React.FC<{
 }) => {
   const modalRef = useRef(null);
   return (
-    <div className="flex items-center justify-between p-2 mt-4 bg-white rounded-xl dark:bg-gray-800 dark:text-gray-200 w-full sm:w-[300px]">
+    <div className="flex items-center justify-between p-2 mt-4 bg-white rounded-xl dark:bg-gray-800 dark:text-gray-200 w-full">
       {isLoggedIn ? (
         <div className="flex items-center justify-between">
           <Image
@@ -44,54 +44,59 @@ const UserProfile: React.FC<{
       ) : (
         <button
           onClick={() => setIsLoginModalOpen(true)}
-          className="ml-4 px-4 py-2 bg-[#4A25E1] text-white rounded-lg w-48"
+          className="px-4 py-2 bg-[#4A25E1] text-white rounded-lg w-48"
         >
           Login
         </button>
       )}
-
       {isLoginModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-2 sm:p-0">
           <div
             ref={modalRef}
-            className="bg-white dark:bg-[#1a1c23] p-4 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700 w-full max-w-sm sm:w-[300px]"
+            className="bg-white dark:bg-[#1a1c23] p-3 sm:p-4 md:p-6 rounded-lg shadow-lg border border-gray-300 dark:border-gray-700 
+                 w-full max-w-[350px] sm:max-w-[400px] md:max-w-[450px]"
           >
-            <div className="flex flex-row sm:flex-row items-start mb-1 border-gray-300 dark:border-gray-700">
+            <div className="flex items-start mb-2 sm:mb-3">
               <img
                 src="/Icons/google.png"
                 alt="Google Icon"
-                className="w-4 h-4 mr-2"
+                className="w-5 sm:w-6 h-5 sm:h-6 mr-2 sm:mr-3"
               />
-              <h2 className="text-sm text-[#1b2559] dark:text-gray-200">
+              <h2 className="text-lg sm:text-xl text-[#1b2559] dark:text-gray-200">
                 Sign in to horizonAI.com with Google
               </h2>
             </div>
-            <div className="border-t border-b border-gray-300 dark:border-gray-700 my-1"></div>
-            <div className="flex items-center mb-2">
+
+            <div className="border-t border-b border-gray-300 dark:border-gray-700 my-2 sm:my-3"></div>
+
+            <div className="flex items-center mb-3 sm:mb-4">
               <img
                 src="/Icons/user-avatar.png"
                 alt="Profile"
-                className="w-8 h-8 rounded-full mr-2"
+                className="w-8 sm:w-10 h-8 sm:h-10 rounded-full mr-2 sm:mr-3"
               />
               <div>
-                <p className="text-sm text-[#1b2559] dark:text-gray-200 font-medium">
+                <p className="text-sm sm:text-lg text-[#1b2559] dark:text-gray-200 font-medium">
                   {userName}
                 </p>
-                <p className="text-xs text-gray-600 dark:text-gray-400">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                   {userEmail}
                 </p>
               </div>
             </div>
+
             <button
               onClick={() => {
                 setIsLoggedIn(true);
                 setIsLoginModalOpen(false);
               }}
-              className="w-full p-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition text-sm"
+              className="w-full p-1.5 sm:p-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 
+                   dark:bg-blue-500 dark:hover:bg-blue-600 transition text-sm sm:text-base"
             >
               Continue as {userName}
             </button>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center">
+
+            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-2 sm:mt-4 text-center">
               To continue, google.com will share your name, email address, and
               profile picture with this site. See this site's{' '}
               <a
