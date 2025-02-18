@@ -37,7 +37,7 @@ const Header: React.FC<{
         >
           <HiMenu className="h-5 w-5 text-gray-700 dark:text-white" />
         </button>
-        <h1 className="text-base lg:text-lg font-semibold text-[#1b2559] dark:text-white">
+        <h1 className="text-base md:text-lg font-semibold text-[#1b2559] dark:text-white">
           Chat UI
         </h1>
       </div>
@@ -46,7 +46,7 @@ const Header: React.FC<{
         <input
           type="text"
           placeholder="Search"
-          className="border p-2 rounded-full pl-10 bg-white dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 outline-none focus:ring-0 focus:border-transparent text-[#1b2559] w-full max-w-xs sm:max-w-sm"
+          className="border p-2 rounded-full pl-10 bg-white dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 outline-none focus:ring-0 focus:border-transparent text-[#1b2559] w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
         />
       </div>
 

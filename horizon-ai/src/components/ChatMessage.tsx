@@ -45,6 +45,7 @@ const ChatMessage: React.FC<{
               className="flex-1 bg-transparent outline-none border-none text-gray-700 dark:text-gray-200"
               value={editedMessage}
               onChange={(e) => setEditedMessage(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleEdit()}
               style={{ width: '100%' }}
             />
           ) : (

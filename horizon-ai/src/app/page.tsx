@@ -25,7 +25,7 @@ export default function Chat() {
   }, []);
 
   return (
-    <div className="flex flex-col h-full bg-gray-100 dark:bg-gray-900 dark:text-white  overflow-y-auto">
+    <div className="flex flex-col h-full bg-gray-100 dark:bg-gray-900 dark:text-white overflow-y-auto md:flex-row">
       <div className="flex flex-row flex-1 ">
         {isSidebarCollapsed && (
           <div className="w-64 ">
@@ -109,7 +109,10 @@ export default function Chat() {
               {isAPIKeyFormOpen && (
                 <APIKeyForm onClose={() => setIsAPIKeyFormOpen(false)} />
               )}
-              <ChatWindow isDisabled={isAPIKeyFormOpen} />
+              <ChatWindow
+                isDisabled={isAPIKeyFormOpen}
+                isAPIKeyFormOpen={isAPIKeyFormOpen}
+              />
             </div>
             <Footer />
           </div>

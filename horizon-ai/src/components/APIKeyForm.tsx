@@ -45,8 +45,8 @@ const APIKeyForm = ({ onClose }: { onClose: () => void }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10">
-      <div className="bg-white dark:bg-gray-900 dark:border dark:border-white shadow-lg rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 w-full max-w-md lg:max-w-lg text-center">
+    <div className="flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10 w-full lg:max-w-lg">
+      <div className="bg-white dark:bg-gray-900 dark:border dark:border-white shadow-lg rounded-2xl p-4 sm:p-6 md:p-8 lg:p-10 w-full lg:max-w-lg text-center">
         <h2 className="text-lg sm:text-xl font-semibold text-[#1b2559] dark:text-gray-200">
           Enter your OpenAI API Key
         </h2>
