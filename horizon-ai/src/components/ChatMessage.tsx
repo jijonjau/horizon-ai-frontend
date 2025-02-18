@@ -21,7 +21,7 @@ const ChatMessage: React.FC<{
   };
 
   return (
-    <div className="flex items-center gap-3 w-full">
+    <div className="flex items-center gap-3 w-full sm:w-3/4 lg:w-2/3 xl:w-1/2">
       <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 flex-shrink-0">
         {isUser ? (
           <HiUser className="text-gray-600 dark:text-gray-300" size={22} />
@@ -45,6 +45,8 @@ const ChatMessage: React.FC<{
               className="flex-1 bg-transparent outline-none border-none text-gray-700 dark:text-gray-200"
               value={editedMessage}
               onChange={(e) => setEditedMessage(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleEdit()}
+              style={{ width: '100%' }}
             />
           ) : (
             <p className="text-gray-700 dark:text-gray-300 flex-1">{message}</p>

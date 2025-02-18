@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import ProPromotionCard from './ProPromotionCard';
 import UserProfile from './UserProfile';
@@ -12,8 +12,6 @@ const Sidebar = ({
   setIsLoginModalOpen,
   userName,
   userEmail,
-  isOpen,
-  setIsOpen,
 }: {
   isLoggedIn: boolean;
   setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
@@ -29,7 +27,7 @@ const Sidebar = ({
   const [isProUser, setIsProUser] = useState(true);
 
   return (
-    <aside className="w-64 bg-white p-4 shadow-lg dark:bg-gray-800 dark:text-gray-200 h-fit">
+    <aside className="w-64 bg-white p-4 shadow-lg dark:bg-gray-800 dark:text-gray-200 h-full">
       <h2 className="text-xl font-semibold text-[#1b2559] dark:text-white">
         HORIZON <span className="font-normal">AI FREE</span>
       </h2>
@@ -39,7 +37,7 @@ const Sidebar = ({
           <li>
             <Link
               href="/chat"
-              className="p-2 rounded-lg hover:bg-gray-400 flex items-center mb-4"
+              className="p-2 rounded-lg hover:bg-gray-300 flex items-center mb-4"
             >
               <img src="/Icons/auto-awesome.png" alt="awesome icon" />
               <span className="text-[#1b2559] dark:text-white ml-4">
