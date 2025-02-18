@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="w-full p-4 bg-white text-[#718096] text-center justify-between flex flex-col sm:flex-row sm:items-center dark:bg-gray-900 dark:text-gray-300">
+    <footer className="bottom-0 w-full p-4 bg-white text-[#718096] text-center justify-between flex flex-col sm:flex-row sm:items-center dark:bg-gray-900 dark:text-gray-300">
       <div className="text-sm sm:text-xs">
         &copy; 2023 Horizon AI. All rights reserved.
       </div>

@@ -23,22 +23,22 @@ const UserProfile: React.FC<{
   return (
     <div className="flex items-center justify-between p-2 mt-4 bg-white rounded-xl dark:bg-gray-800 dark:text-gray-200 w-full">
       {isLoggedIn ? (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between w-full">
           <Image
             src="/Icons/user-avatar.png"
             alt="User Avatar"
-            width={24}
-            height={24}
+            width={32}
+            height={32}
             className="rounded-full"
           />
-          <span className="ml-2 text-sm font-medium text-gray-800 dark:text-gray-200">
+          <span className="ml-2  font-medium text-gray-800 dark:text-gray-200">
             {`${userName} Parkison`}
           </span>
           <button
             onClick={() => setIsLoggedIn(false)}
             className="p-1 rounded-full bg-gray-100 hover:bg-gray-300 transition dark:bg-gray-700 dark:hover:bg-gray-600 ml-2"
           >
-            <HiOutlineLogout className="w-4 h-4 text-gray-700 dark:text-gray-300" />
+            <HiOutlineLogout className="w-5 h-5 text-gray-700 dark:text-gray-300" />
           </button>
         </div>
       ) : (

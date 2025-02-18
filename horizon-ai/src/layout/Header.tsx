@@ -29,7 +29,7 @@ const Header: React.FC<{
   setIsSidebarCollapsed,
 }) => {
   return (
-    <header className="w-screen p-4 flex items-center bg-white shadow-sm dark:bg-gray-900 dark:shadow-lg dark:text-white">
+    <header className="w-full p-4 flex items-center bg-white shadow-sm dark:bg-gray-900 dark:shadow-lg dark:text-white">
       <div className="flex items-center space-x-2 ml-4">
         <button
           className="lg:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:focus:ring-offset-gray-900"

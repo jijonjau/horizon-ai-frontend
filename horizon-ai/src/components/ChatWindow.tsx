@@ -54,8 +54,8 @@ const ChatWindow: React.FC<{ isDisabled: boolean }> = ({ isDisabled }) => {
   };
 
   return (
-    <div className="flex flex-col h-full items-center w-full p-2 md:p-4">
-      <div className="w-full max-w-2xl flex-1 overflow-y-auto space-y-4">
+    <div className="flex flex-col items-center justify-center h-fit w-full p-2 md:p-4">
+      <div className="w-full max-w-6xl flex flex-col items-center justify-center flex-1 overflow-y-auto space-y-4">
         {messages.map((msg, index) => (
           <ChatMessage
             key={index}
@@ -69,7 +69,7 @@ const ChatWindow: React.FC<{ isDisabled: boolean }> = ({ isDisabled }) => {
         {messages.some((msg) => !msg.isUser) && (
           <button
             onClick={regenerateResponse}
-            className="bg-gray-200 text-[#1B2559] border border-[#E2E8F0] px-3 py-2 rounded-lg font-medium hover:bg-gray-300 transition mt-4 md:ml-40"
+            className="bg-gray-200 text-[#1B2559] border border-[#E2E8F0] px-3 py-2 rounded-lg font-medium hover:bg-gray-300 transition mt-4 "
           >
             <img
               src="/Icons/regenerate.png"
@@ -81,7 +81,7 @@ const ChatWindow: React.FC<{ isDisabled: boolean }> = ({ isDisabled }) => {
         )}
       </div>
 
-      <div className="w-full max-w-2xl p-2 md:p-4 dark:border-gray-700 bottom-2">
+      <div className="bottom-4 w-full max-w-2xl p-2 md:p-4 dark:border-gray-700">
         <div className="flex w-full">
           <input
             type="text"
